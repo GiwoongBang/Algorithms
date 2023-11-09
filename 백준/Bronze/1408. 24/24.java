@@ -53,8 +53,7 @@ public class Main {
         int resultMin = startTime[1] - nowTime[1];
         int resultSec = startTime[2] - nowTime[2];
 
-        int[] resultArr = {resultHour, resultMin, resultSec};
-        return resultArr;
+        return new int[]{resultHour, resultMin, resultSec};
     }
 
     private static int[] biggerNowTime(int[] nowTime, int[] startTime) {
@@ -67,8 +66,7 @@ public class Main {
         int resultMin = -tempMin;
         int resultSec = -tempSec;
 
-        int[] resultArr = {resultHour, resultMin, resultSec};
-        return resultArr;
+        return new int[]{resultHour, resultMin, resultSec};
     }
 
     private static void setResult(int[] resultArr) {
