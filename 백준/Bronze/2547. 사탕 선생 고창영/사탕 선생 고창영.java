@@ -17,7 +17,7 @@ public class Main {
                 candies = candies.add(BigInteger.valueOf(Long.parseLong(br.readLine())));
             }
 
-            if (candies.mod(BigInteger.valueOf(students)) == BigInteger.ZERO) {
+            if (candies.mod(BigInteger.valueOf(students)).equals(BigInteger.ZERO)) {
                 System.out.println("YES");
             } else {
                 System.out.println("NO");
