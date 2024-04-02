@@ -8,7 +8,7 @@ class Main {
         long second = 1;
 
         if (n == 1) {
-            System.out.print(1);
+            System.out.print(second);
         } else {
             long result = 0;
             for (int i = 2; i <= n; i++) {
