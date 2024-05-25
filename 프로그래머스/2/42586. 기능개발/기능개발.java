@@ -21,14 +21,11 @@ class Solution {
         for (Integer speed : speeds) speedsQue.add(speed);
 
         while (!progressesQue.isEmpty()) {
-            int index = 0;
-            int size = progressesQue.size();
-            while (size > index) {
-                Integer speed = speedsQue.poll();
-                int added = progressesQue.poll() + speed;
-                progressesQue.add(added);
-                speedsQue.add(speed);
-                index++;
+            int size = progressesQue.size(); // 남아있는 사이즈만큼
+            for (int i = 0; i < size; i++) {
+                int added = progressesQue.poll() + speedsQue.peek();
+                progressesQue.add(added);                   // [93, 30, 55] >> [60, 60, 94]
+                speedsQue.add(speedsQue.poll());            // [1, 30, 5]   >> [30, 5, 1]
             }
 
             Integer complete = 0;
@@ -43,16 +40,6 @@ class Solution {
             }
         }
         return answer;
-    }
 
-//    public static void main(String[] args) {
-//        Solution sol = new Solution();
-//        int[] progresses1 = {93, 30, 55};
-//        int[] speeds1 = {1, 30, 5};
-//        System.out.println(sol.solution(progresses1, speeds1));  // [2, 1]
-//
-//        int[] progresses2 = {95, 90, 99, 99, 80, 99};
-//        int[] speeds2 = {1, 1, 1, 1, 1, 1};
-//        System.out.println(sol.solution(progresses2, speeds2));  // [1, 3, 2]
-//    }
+    }
 }
