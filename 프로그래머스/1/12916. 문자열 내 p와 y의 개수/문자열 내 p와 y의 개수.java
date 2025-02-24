@@ -1,18 +1,22 @@
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-        int P = 0;
-        int Y = 0;
 
-        char[] charArray = s.toUpperCase().toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            if (charArray[i] == 'P') {
-                P++;
-            } else if (charArray[i] == 'Y') {
-                Y++;
+        boolean answer = true;
+
+        int count = 0;
+        String lowerCase = s.toLowerCase();
+
+        for (int i = 0; i < lowerCase.length(); i++) {
+            if (lowerCase.charAt(i) == 'p') {
+                count ++;
+            } else if (lowerCase.charAt(i) == 'y') {
+                count --;
             }
         }
-        if (P != Y) answer = false;
+
+        if (count != 0) {
+            answer = false;
+        }
 
         return answer;
     }
